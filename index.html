@@ -59,9 +59,16 @@
         }
 
         audio {
-            margin: 20px;
-            width: 100%;
-            max-width: 300px;
+            margin: 10px;
+            max-width: 260px;
+            /*max-width: 300px; */
+            height: 60px;
+
+        }
+
+        .audio-container {
+            transform: scale(1.3);
+            /* Escala el reproductor 1.5 veces su tamaño */
         }
 
         #currentStation {
@@ -70,6 +77,27 @@
             font-weight: bold;
             color: #333;
             text-align: center;
+        }
+
+        #currentStation {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #currentWeb {
+            margin-top: 8px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        #currentWeb a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        #currentWeb a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -84,13 +112,11 @@
         <button
             onclick="playRadio('https://playerservices.streamtheworld.com/api/livestream-redirect/XHDFMFMAAC.aac?dist=onlineradiobox', this)">4.
             Mix 106.5</button>
-        <button onclick="playRadio('https://streaming.fabrik.fm/lm-radio/echocast/audio/medium/index.m3u8', this)">5. LM
-            Radio</button>
+        <button onclick="playRadio('https://stream-156.zeno.fm/qa29r0es1f8uv', this)">5. Radio Music80s Stereo</button>
         <button
             onclick="playRadio('https://playerservices.streamtheworld.com/api/livestream-redirect/XHCAA.mp3?dist=onlineradiobox', this)">6.
             Stereorey</button>
-        <button onclick="playRadio('https://mdstrm.com/audio/60a2745ff943100826374a70/icecast.audio', this)">7.
-            Aspen</button>
+        <button onclick="playRadio('https://listen.181fm.com/181-eagle_128k.mp3', this)">7. 181.fm - The Eagle</button>
         <button onclick="playRadio('https://streaming.live365.com/a80304', this)">8. Easy Hits Florida</button>
         <button onclick="playRadio('https://tinyurl.com/181fmAwesome', this)">9. 181.fm Awesoma 80's</button>
         <button onclick="playRadio('https://tinyurl.com/80s80s', this)">10. 80s80s</button>
@@ -107,7 +133,8 @@
         <button onclick="playRadio('http://ais-edge103-live365-dal02.cdnstream.com/a14920', this)">16. Flashback Radio
             80's
             Music</button>
-        <button onclick="playRadio('https://hdradioclassicrock-rfritschka.radioca.st/', this)">17. Classic Rock</button>
+        <button onclick="playRadio('https://hdradioclassicrock-rfritschka.radioca.st/stream.m3u', this)">17. Classic
+            Rock</button>
         <button onclick="playRadio('https://i4.streams.ovh/sc/bluesrad/stream', this)">18. The Blues Radio</button>
         <button onclick="playRadio('https://thebeatlesradio-rowrigos.radioca.st/live', this)">19. The Beatles Radio en
             vivo</button>
@@ -116,12 +143,14 @@
             Houston Blues Radio</button>
     </div>
 
-    <audio id="audioPlayer" controls>
+    <audio class="audio-container" id="audioPlayer" controls>
         Tu navegador no soporta la reproducción de audio.
     </audio>
 
     <!-- Elemento para mostrar el nombre de la emisora -->
-    <p id="currentStation">Selecciona una emisora para comenzar</p>
+    <p id="currentStation">Selecciona una emisora</p>
+    <p>Creado por: Jenrry Soto Dextre <br>Web: <a href="https://dextre.xyz" target="_blank">dextre.xyz</a></p>
+    <!-- <p id="currentWeb">Web: <a href="https://dextre.xyz" target="_blank">dextre.xyz</a></p> -->
 
     <script>
         let activeButton = null;
@@ -129,10 +158,12 @@
         function playRadio(url, button) {
             const audioPlayer = document.getElementById('audioPlayer');
             const currentStation = document.getElementById('currentStation');
+            const currentWeb = document.getElementById('currentWeb')
             audioPlayer.src = url;
             audioPlayer.play();
             const stationName = button.textContent;
             currentStation.innerHTML = "Reproduciendo Emisora:<br>" + stationName;
+
 
             if (activeButton) {
                 activeButton.classList.remove('active');
