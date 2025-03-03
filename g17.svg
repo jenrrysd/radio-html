@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="49.403412mm"
+   height="46.190609mm"
+   viewBox="0 0 49.403412 46.190609"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch2">
+      <stop
+         style="stop-color:#feffff;stop-opacity:1;"
+         offset="0"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="g30"
+     transform="translate(-59.303501,-176.09814)">
+    <rect
+       style="fill:#1a1a1a;stroke:#feffff;stroke-width:1.58942;stroke-linecap:square;stroke-dasharray:none;paint-order:normal"
+       id="rect17"
+       width="47.813992"
+       height="44.601189"
+       x="60.098213"
+       y="176.89285"
+       ry="4.1261015" />
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:8.75194px;line-height:0;font-family:Roboto;-inkscape-font-specification:'Roboto Light';text-align:center;text-anchor:middle;stroke-width:0.464999;stroke-dasharray:none"
+       x="85.858398"
+       y="183.34431"
+       id="text18"
+       transform="scale(0.98009207,1.0203123)"><tspan
+         id="tspan18"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.15;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;fill:#ffffff;stroke-width:0.464999;stroke-dasharray:none"
+         x="85.858398"
+         y="183.34431"
+         dx="0.093281828">Radios</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.8167px;line-height:0.75;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Bold';fill:#ffffff;stroke-width:0.464999;stroke-dasharray:none"
+         id="tspan29"
+         x="85.858398"
+         y="195.79781">ON</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;line-height:1.15;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Semi-Bold';fill:#ffffff;stroke-width:0.464999;stroke-dasharray:none"
+         x="85.858398"
+         y="204.52158"
+         id="tspan20">line</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.43958px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto Light';text-align:center;text-anchor:middle;white-space:pre;inline-size:20.319;stroke-width:0.264583"
+       x="66.203323"
+       y="272.45288"
+       id="text21"
+       transform="matrix(1.2646151,0,0,0.79075443,0.52916667,-3.7041668)"><tspan
+         x="66.203323"
+         y="272.45288"
+         id="tspan2"><tspan
+           style="fill:#e6e6e6"
+           id="tspan1">sin</tspan><tspan
+           y="272.45288"
+           id="tspan3"> </tspan></tspan><tspan
+         x="66.203323"
+         y="276.75236"
+         id="tspan5"><tspan
+           style="fill:#e6e6e6"
+           id="tspan4">publicidad</tspan><tspan
+           y="276.75236"
+           id="tspan6"> </tspan></tspan><tspan
+         x="66.203323"
+         y="281.05183"
+         id="tspan8"><tspan
+           style="fill:#e6e6e6"
+           id="tspan7">web</tspan></tspan></text>
+  </g>
+</svg>
