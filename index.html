@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radios Online - Solo Rock</title>
+    <!-- favicon-->
+    <link rel="icon" type="image/x-icon" href="g4.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .radio-list {
+            display: block;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            /* Centra el contenedor */
+            width: 300px;
+            /* Ancho del contenedor (ajusta según necesidad) */
+        }
+
+        .radio-list button {
+            /*display: block; */
+            margin: 10px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            /* Transición suave */
+        }
+
+        .radio-list button:hover {
+            background-color: #0056b3;
+        }
+
+        .radio-list button.active {
+            background-color: #004080;
+            /* Azul oscuro para el botón activo */
+        }
+
+        audio {
+            margin: 20px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        #currentStation {
+            margin-top: 7px;
+            font-size: 17px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>SOLO ROCK <br>Radios Online</h1>
+    <div class="radio-list">
+        <p>Selecciona una radio para reproducir:</p>
+        <button onclick="playRadio('http://206.217.213.236:8410/', this)">1. GotRadio 80s en vivo</button>
+        <button onclick="playRadio('https://radiostream.pl/tuba9-1.mp3', this)">2. Radio Zlote Przeboje</button>
+        <button onclick="playRadio('https://usa7.fastcast4u.com/proxy/curtinfm?mp=%2F1',this)">3. Curtin Radio</button>
+        <button
+            onclick="playRadio('https://playerservices.streamtheworld.com/api/livestream-redirect/XHDFMFMAAC.aac?dist=onlineradiobox', this)">4.
+            Mix 106.5</button>
+        <button onclick="playRadio('https://streaming.fabrik.fm/lm-radio/echocast/audio/medium/index.m3u8', this)">5. LM
+            Radio</button>
+        <button
+            onclick="playRadio('https://playerservices.streamtheworld.com/api/livestream-redirect/XHCAA.mp3?dist=onlineradiobox', this)">6.
+            Stereorey</button>
+        <button onclick="playRadio('https://mdstrm.com/audio/60a2745ff943100826374a70/icecast.audio', this)">7.
+            Aspen</button>
+        <button onclick="playRadio('https://streaming.live365.com/a80304', this)">8. Easy Hits Florida</button>
+        <button onclick="playRadio('https://tinyurl.com/181fmAwesome', this)">9. 181.fm Awesoma 80's</button>
+        <button onclick="playRadio('https://tinyurl.com/80s80s', this)">10. 80s80s</button>
+        <button onclick="playRadio('https://scdn.nrjaudio.fm/audio1/fr/30601/aac_64.mp3', this)">11. Nostalgie
+            Fr</button>
+        <button
+            onclick="playRadio('https://strw3.openstream.co/981?aw_0_1st.collectionid%3D6906%26stationId%3D6906', this)">12.
+            BeatlesRadio</button>
+        <button onclick="playRadio('https://ais-edge90-dal03.cdnstream.com/b77280_128mp3', this )">13. Aardvark</button>
+        <button onclick="playRadio('https://stream.rockantenne.de/rockantenne/stream/mp3', this)">14. Rock Antenne
+            Live</button>
+        <button onclick="playRadio('https://europe2.lmn.fm/europe2.128.aac/h23gzYklLtm-337091591-4992.aac', this)">15.
+            Europe2</button>
+        <button onclick="playRadio('http://ais-edge103-live365-dal02.cdnstream.com/a14920', this)">16. Flashback Radio
+            80's
+            Music</button>
+        <button onclick="playRadio('https://hdradioclassicrock-rfritschka.radioca.st/', this)">17. Classic Rock</button>
+        <button onclick="playRadio('https://haradioblues-rfritschka.radioca.st/', this)">18. HD Radio The Blues</button>
+        <button onclick="playRadio('https://thebeatlesradio-rowrigos.radioca.st/live', this)">19. The Beatles Radio en
+            vivo</button>
+        <button
+            onclick="playRadio('https://ais-edge89-dal02.cdnstream.com/b76353_128mp3?listenerId=735eabef088f5b63e3d62297494ec615&aw_0_1st.playerid=esPlayer&aw_0_1st.skey=1696730860', this)">20.
+            Houston Blues Radio</button>
+    </div>
+
+    <audio id="audioPlayer" controls>
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+
+    <!-- Elemento para mostrar el nombre de la emisora -->
+    <p id="currentStation">Selecciona una emisora para comenzar</p>
+
+    <script>
+        let activeButton = null;
+
+        function playRadio(url, button) {
+            const audioPlayer = document.getElementById('audioPlayer');
+            const currentStation = document.getElementById('currentStation');
+            audioPlayer.src = url;
+            audioPlayer.play();
+            const stationName = button.textContent;
+            currentStation.innerHTML = "Reproduciendo Emisora:<br>" + stationName;
+
+            if (activeButton) {
+                activeButton.classList.remove('active');
+            }
+
+            button.classList.add('active');
+            activeButton = button;
+        }
+    </script>
+</body>
+
+</html>
