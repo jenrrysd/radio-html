@@ -163,6 +163,40 @@
 
     <script>
         let activeButton = null;
+        let currentUrl = null;
+
+        function playRadio(url, button) {
+            const audioPlayer = document.getElementById('audioPlayer');
+            const currentStation = document.getElementById('currentStation');
+
+            if (activeButton === button && currentUrl === url) {
+                // Si el botón activo es el mismo y la URL es la misma, detén la reproducción
+                audioPlayer.pause();
+                audioPlayer.src = '';
+                currentStation.innerHTML = "Selecciona una emisora";
+                button.classList.remove('active');
+                activeButton = null;
+                currentUrl = null;
+            } else {
+                // Si no, reproduce la nueva URL
+                audioPlayer.src = url;
+                audioPlayer.play();
+                const stationName = button.textContent;
+                currentStation.innerHTML = "Reproduciendo Emisora:<br>" + stationName;
+
+                if (activeButton) {
+                    activeButton.classList.remove('active');
+                }
+
+                button.classList.add('active');
+                activeButton = button;
+                currentUrl = url;
+            }
+        }
+    </script>
+
+    <!-- <script>
+        let activeButton = null;
 
         function playRadio(url, button) {
             const audioPlayer = document.getElementById('audioPlayer');
@@ -181,7 +215,7 @@
             button.classList.add('active');
             activeButton = button;
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
