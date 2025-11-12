@@ -19,12 +19,13 @@
             font-family: Arial, sans-serif;
             background-color: #c7cce6;
             text-align: center;
-            padding: 20px;
+            padding: 10px;
         }
 
         h1 {
             color: #333;
             text-align: center;
+            font-size: 40px;
         }
 
         .radio-list {
@@ -36,24 +37,27 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin: 0 auto;
             /* Centra el contenedor */
-            width: 272px;
+            max-width: 340px;
+            min-width: 340px;
+            display: fixed;
             /* Ancho del contenedor (ajusta según necesidad) */
         }
 
         .radio-list button {
             /*display: block; */
             margin: 10px 0;
-            padding: 10px 20px;
+            padding: 10px 10px;
             font-size: 16px;
             cursor: pointer;
             border: none;
             background-color: #007bff;
             color: #fff;
             border-radius: 5px;
-            width: 272px;
+            width: 280px;
             text-align: center;
             transition: background-color 0.3s ease;
             /* Transición suave */
+           
         }
 
         .radio-list button:hover {
@@ -68,16 +72,30 @@
         audio {
             margin: 10px 0;
             text-align: center;
-            max-width: 250px;
-            /*width: 240px;
-            /*max-width: 300px; */
+            width: 280px;
             height: 50px;
-
+            border-radius: 1 !important;
+            -webkit-border-radius: 0 !important;
+            -moz-border-radius: 0 !important;
         }
 
         .audio-container {
-            transform: scale(1);
-            /* Escala el reproductor 1.5 veces su tamaño */
+            padding-top: 5px;
+            height: 30px;
+            transform: scale(1.3);
+            /* Escala el reproductor 2 veces su tamaño */
+            border-radius: 1 !important;
+            -webkit-border-radius: 1 !important;
+            -moz-border-radius: 1 !important;
+        }
+
+        /* Forzar bordes cuadrados en todos los elementos internos del reproductor */
+        audio::-webkit-media-controls-panel {
+            border-radius: 0 !important;
+        }
+
+        audio::-webkit-media-controls-enclosure {
+            border-radius: 0 !important;
         }
 
         #currentStation {
