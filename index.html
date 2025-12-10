@@ -57,7 +57,7 @@
             text-align: center;
             transition: background-color 0.3s ease;
             /* Transición suave */
-           
+
         }
 
         .radio-list button:hover {
@@ -126,6 +126,40 @@
         #currentWeb a:hover {
             text-decoration: underline;
         }
+
+        .qr-container {
+            text-align: center;
+            margin: 20px 0;
+
+            object-fit: contain;
+
+        }
+
+        .qr-code {
+            width: 300px;
+            height: 300px;
+
+            max-width: 90vw;
+            max-height: 90vh;
+
+            object-fit: contain;
+
+            border-radius: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .qr-code {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        /*         .qr-code {
+            max-width: 30vw;
+            max-height: 30vh;
+            /* object-fit: contain; 
+            border-radius: 10px;
+        } */
     </style>
 </head>
 
@@ -147,16 +181,16 @@
         <button onclick="playRadio('https://streaming.live365.com/a80304', this)">8. Easy Hits Florida</button>
         <button onclick="playRadio('https://tinyurl.com/181fmAwesome', this)">9. 181.fm Awesoma 80's</button>
         <button onclick="playRadio('https://tinyurl.com/80s80s', this)">10. 80s80s</button>
-        <button onclick="playRadio('https://scdn.nrjaudio.fm/audio1/fr/30601/aac_64.mp3', this)">11. Nostalgie
-            Fr</button>
+        <button onclick="playRadio('https://cast.fmhits80s.net.pe/listen/fm_hits_80s/stream128', this)">11.
+            fmhits80s</button>
         <button
             onclick="playRadio('https://strw3.openstream.co/981?aw_0_1st.collectionid%3D6906%26stationId%3D6906', this)">12.
             BeatlesRadio</button>
         <button onclick="playRadio('https://ais-edge90-dal03.cdnstream.com/b77280_128mp3', this )">13. Aardvark</button>
         <button onclick="playRadio('https://stream.rockantenne.de/rockantenne/stream/mp3', this)">14. Rock Antenne
             Live</button>
-        <button onclick="playRadio('https://europe2.lmn.fm/europe2.128.aac/h23gzYklLtm-337091591-4992.aac', this)">15.
-            Europe2</button>
+        <button onclick="playRadio('https://stream.zeno.fm/b751gt2uweruv', this)">15. Ochentas Radio - rock and
+            pop</button>
         <button onclick="playRadio('https://das-edge16-live365-dal02.cdnstream.com/a14920', this)">16. Flashback Radio
             80's
             Music</button>
@@ -175,6 +209,18 @@
 
     <!-- Elemento para mostrar el nombre de la emisora -->
     <p id="currentStation">Selecciona una emisora</p>
+
+    <div class="qr-container">
+        <p>Estos proyectos web son mi aporte a la comunidad<br> si te ha servido y deseas que éste <br> proyecto
+            continue, tu aporte escaneando el QR</p>
+
+        <img src="yape.jpeg" alt="yape" class="qr-code"></img>
+
+    </div>
+
+
+
+
     <p>Creado por: Jenrry Soto Dextre <br>Web: <a href="https://dextre.xyz" target="_blank">dextre.xyz</a></p>
     <!-- <p id="currentWeb">Web: <a href="https://dextre.xyz" target="_blank">dextre.xyz</a></p> -->
 
@@ -211,6 +257,7 @@
             }
         }
     </script>
+
 
     <!-- <script>
         let activeButton = null;
